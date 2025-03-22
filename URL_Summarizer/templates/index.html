@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Summarizer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script> <!-- Markdown Renderer -->
+</head>
+<body>
+    <div class="container">
+        <h1>Website Summarizer</h1>
+        <form id="summarize-form">
+            <input type="text" id="url" name="url" placeholder="Enter website URL..." required>
+            <button type="submit">Summarize</button>
+        </form>
+        <div id="result" class="hidden">
+            <h2>Summary:</h2>
+            <h3 id="website-title"></h3>
+            <div id="summary-content"></div> <!-- This will render Markdown -->
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
